@@ -7,9 +7,10 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , scene{new QGraphicsScene(this)}
 {
     ui->setupUi(this);
-
+    ui->graphicsView->setScene(scene);
 
 }
 
@@ -28,7 +29,9 @@ void MainWindow::on_actionOpen_triggered() {
     if (!fileName.isEmpty()) {
         QPixmap pixmap (fileName);
         if (!pixmap.isNull()) {
-            ui->imageLabel->setPixmap(pixmap);
+            scene->clear();
+            scene->addPixmap(pixmap);
+            scene->setSceneRect(pixmap.rect());
         }
     }
 }
