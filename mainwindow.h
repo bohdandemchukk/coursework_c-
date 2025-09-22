@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include <QGraphicsScene>
+#include <QWheelEvent>
+#include "mygraphicsview.h"
 
 
 QT_BEGIN_NAMESPACE
