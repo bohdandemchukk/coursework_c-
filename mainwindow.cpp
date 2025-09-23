@@ -3,6 +3,8 @@
 #include <QFileDialog>
 #include <QSlider>
 #include "mygraphicsview.h"
+#include <QTransform>
+#include <QGraphicsItem>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -44,14 +46,27 @@ void MainWindow::on_actionOpen_triggered() {
             "Images (*.png *.jpg *.jpeg *.webp *.bmp)")};
 
     if (!fileName.isEmpty()) {
-        QPixmap pixmap (fileName);
-        if (!pixmap.isNull()) {
-            scene->clear();
-            scene->addPixmap(pixmap);
-            scene->setSceneRect(pixmap.rect());
-        }
+        scene->clear();
+        ui->graphicsView->setPixmap(fileName);
     }
 }
 
+void MainWindow::on_actionCrop_triggered() {
+    ui->graphicsView->setCropMode(true);
+}
+
+
+void MainWindow::on_actionRotateLeft_triggered() {
+    QTransform t;
+    t.rotate(-90);
+    ui->graphicsView->setPixmap(ui->graphicsView->getPixmap().transformed(t));
+
+}
+
+void MainWindow::on_actionRotateRight_triggered() {
+    QTransform t;
+    t.rotate(90);
+    ui->graphicsView->setPixmap(ui->graphicsView->getPixmap().transformed(t));
+}
 
 

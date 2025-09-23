@@ -27,6 +27,11 @@ private:
 
 private slots:
     void on_actionOpen_triggered();
+    void on_actionCrop_triggered();
+    void on_actionRotateLeft_triggered();
+    void on_actionRotateRight_triggered();
+
+
 };
 
 #endif // MAINWINDOW_H
