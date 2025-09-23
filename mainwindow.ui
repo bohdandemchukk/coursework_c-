@@ -69,8 +69,16 @@
      <addaction name="actionRotateLeft"/>
      <addaction name="actionRotateRight"/>
     </widget>
+    <widget class="QMenu" name="menuFlip">
+     <property name="title">
+      <string>Flip</string>
+     </property>
+     <addaction name="actionFlipHorizontally"/>
+     <addaction name="actionFlipVertically"/>
+    </widget>
     <addaction name="actionCrop"/>
     <addaction name="menuRotate"/>
+    <addaction name="menuFlip"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -109,6 +117,16 @@
   <action name="actionRotateRight">
    <property name="text">
     <string>Right</string>
+   </property>
+  </action>
+  <action name="actionFlipHorizontally">
+   <property name="text">
+    <string>Horizontally</string>
+   </property>
+  </action>
+  <action name="actionFlipVertically">
+   <property name="text">
+    <string>Vertically</string>
    </property>
   </action>
  </widget>

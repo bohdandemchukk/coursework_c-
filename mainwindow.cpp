@@ -57,15 +57,27 @@ void MainWindow::on_actionCrop_triggered() {
 
 
 void MainWindow::on_actionRotateLeft_triggered() {
-    QTransform t;
+    QTransform t{};
     t.rotate(-90);
     ui->graphicsView->setPixmap(ui->graphicsView->getPixmap().transformed(t));
 
 }
 
 void MainWindow::on_actionRotateRight_triggered() {
-    QTransform t;
+    QTransform t{};
     t.rotate(90);
+    ui->graphicsView->setPixmap(ui->graphicsView->getPixmap().transformed(t));
+}
+
+void MainWindow::on_actionFlipHorizontally_triggered() {
+    QTransform t{};
+    t.scale(-1, 1);
+    ui->graphicsView->setPixmap(ui->graphicsView->getPixmap().transformed(t));
+}
+
+void MainWindow::on_actionFlipVertically_triggered() {
+    QTransform t{};
+    t.scale(1, -1);
     ui->graphicsView->setPixmap(ui->graphicsView->getPixmap().transformed(t));
 }
 

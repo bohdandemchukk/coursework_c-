@@ -30,6 +30,8 @@ private slots:
     void on_actionCrop_triggered();
     void on_actionRotateLeft_triggered();
     void on_actionRotateRight_triggered();
+    void on_actionFlipHorizontally_triggered();
+    void on_actionFlipVertically_triggered();
 
 
 };
